@@ -1,6 +1,7 @@
 #include <iostream>
 #include <lexer.h>
 #include <vector>
+#include<utils.h>
 namespace rst
 {
     namespace
@@ -287,10 +288,20 @@ namespace rst
             return rkeywords[tag];
         }
     }
-    void Scanner::print_tokens(){
+    void Scanner::print_tokens()
+    {
         // std::cout<<"ok"<<std::endl;
         // std::cout<<int(TokenType::L_CHAR);
-        for(auto it:tokens)
-            printf("<%s,%d> ",it.to_string().c_str(),int(it.get_tag()));
+        for (auto it : tokens)
+            printf("<%s,%d> ", it.to_string().c_str(), int(it.get_tag()));
+    }
+    void Scanner::match(TokenType tag)
+    {
+        if (this_token().get_tag() != tag)
+        {
+            rst_error(SYNTAX_ERROR,"1");
+            
+        }
+        advance();
     }
 }

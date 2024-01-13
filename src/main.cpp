@@ -1,6 +1,7 @@
 #include <lexer.h>
 #include <utils.h>
-
+#include<context.h>
+using namespace rst;
 int main()
 {
     // using namespace std;
@@ -14,7 +15,10 @@ int main()
     std::string s;
     while (std::getline(std::cin, s))
     {
-        rst::Scanner("dy",s).print_tokens();
+        Context con("dy",s);
+        con.init_scanner();
+        con.parse_program();
         std::cout<<std::endl;
     }
+    
 }
