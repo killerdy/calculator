@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/calculator.dir/src/lexer.cpp.o CMakeFiles/calculator.dir/src/main.cpp.o CMakeFiles/calculator.dir/src/utils.cpp.o -o calculator 
